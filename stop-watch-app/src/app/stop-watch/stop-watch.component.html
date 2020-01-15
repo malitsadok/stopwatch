@@ -1,0 +1,26 @@
+
+ <div class="App-header">
+ 
+ 
+   <div class="clock-container">
+    <span>{{minute}}</span>
+    <span>:</span>
+	<span>{{second}}</span>
+	 <span>:</span>
+	 <span>{{millisecond}}</span>
+   </div>
+
+	<div class = button-container>
+	  <button  class="btn btn-primary"  (click) ="flagState ? onPlay() : onPause()"><strong>{{controlBtnText}} </strong></button> 
+	  <button class =" btn btn-primary" (click)="add()"><strong>Add</strong></button>
+	  <button class =" btn btn-primary" (click)="reset()"><strong>Reset</strong></button>
+	 </div>
+	 
+	
+	    <div *ngFor = "let i of times ; let ind =index">
+	      {{i.timePoint}}
+	      <span (click)="remove(ind)">remove</span>
+	    </div>	
+	
+
+</div>

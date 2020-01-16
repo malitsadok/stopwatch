@@ -8,15 +8,15 @@ public class TimeWatchView {
 	
 	
 	
-	public TimeWatchView(UUID id2, String timePoint) {
-		this.timeWatchLabel = timePoint;
+	public TimeWatchView(UUID id2, String timeWatch) {
+		this.timeWatchLabel = timeWatch;
 		this.id = id2 ; 
 	}
-	public String getTimePoint() {
+	public String getTimeWatch() {
 		return timeWatchLabel;
 	}
-	public void setTimePoint(String timePoint) {
-		this.timeWatchLabel = timePoint;
+	public void setTimeWatch(String timeWatch) {
+		this.timeWatchLabel = timeWatch;
 	}
 	public UUID getId() {
 		return id;

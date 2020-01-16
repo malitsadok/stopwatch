@@ -19,10 +19,11 @@ public class StopWatchRepImp  implements  StopWatchRepository{
 	@Override
 	public void deleteAllTimeWatches() {
 		Session currentSession = entityManager.unwrap(Session.class);
-	    String hql = String.format("delete from %s","TIME_WATCH");
-	    Query<?> query = currentSession.createQuery(hql);
+		currentSession.beginTransaction() ;
+	    Query query = currentSession.createQuery("delete from TimeWatch"  );
 	    query.executeUpdate();
-		
+	    currentSession.getTransaction().commit();;
+
 	}
 
 	@Override
@@ -36,7 +37,9 @@ public class StopWatchRepImp  implements  StopWatchRepository{
 	@Override
 	public void saveTimeWatch(TimeWatch timeWatch) {
 		Session currentSession = entityManager.unwrap(Session.class);
-		currentSession.save(timeWatch);
+		currentSession.beginTransaction() ;
+		currentSession.persist(timeWatch);
+		currentSession.getTransaction().commit();
 		
 	}
 
